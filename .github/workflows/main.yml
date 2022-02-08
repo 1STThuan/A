@@ -1,0 +1,17 @@
+name: Main
+on:
+  workflow_dispatch
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: convictional/trigger-workflow-and-wait@v1.3.0
+        with:
+          owner: Bronompa
+          repo: B
+          github_token: ${{ secrets.G }}
+          github_user: Bronompa
+          workflow_file_name: main.yml
+          ref: main
+          inputs: '{}'
+          wait_workflow: false
